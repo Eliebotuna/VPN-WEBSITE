@@ -342,6 +342,32 @@ nav {
     text-transform: lowercase;
 }
 
+/* Counter Animation */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.map-stat:nth-child(1) .counter {
+    animation: countUp 1s ease-out forwards;
+}
+
+.map-stat:nth-child(2) .counter {
+    animation: countUp 1s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+.map-stat:nth-child(3) h3 {
+    animation: countUp 1s ease-out 1s forwards;
+    opacity: 0;
+}
+
 /* Stats Section */
 .stats {
     background-color: var(--primary-color);
@@ -376,6 +402,7 @@ nav {
     margin-bottom: 0.5rem;
     font-weight: 800;
     background: linear-gradient(135deg, #FF6B6B, #FF4B4B);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
